@@ -7,20 +7,23 @@
 /*Custom Properties */
 
 :root {
-    --ff-primary: Georgia, 'Times New Roman', Times, serif;
-    --ff-secondary: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --ff-primary: 'Playfair Display', serif;
+    --ff-secondary: 'Lora', serif;;
 
     --fw-reg: 300;
     --fw-bold: 900;
 
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-accent: #16e0bd; /*CHANGE THIS COLOR!!! */ 
 
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25);
+            /* 0.125em, 0.125em, 0.25em rgba(0,0,0,.15); */
 }
 
 @media (min-width: 800px) {
@@ -43,6 +46,10 @@ body {
     line-height: 1.6;;
 }
 
+section {
+    padding: 5em 2em;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -57,7 +64,7 @@ strong {
 h1, 
 h2,
 h3 {
-    line-height: 1.1;
+    line-height: 1;
     margin: 0;
 }
 
@@ -90,8 +97,85 @@ h3 {
     font-size: var(--fs-h3);
 }
 
+.section__subtitle--intro {
+    background-image: url(https://image.freepik.com/free-vector/blue-cyber-binary-code-future-technology_42077-302.jpg);
+    background-blend-mode: lighten;
+    color: white;
+}
+
 .section__subtitle--intro,
 .section__subtitle--about {
-    background: var(--clr-accent);
+    /*background: var(--clr-accent);*/
+    padding: .25em 1em;
     font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+/*REMOVE THIS!!!  - nav none is ONLY TEMPORARY!!!  */
+
+nav {display: none;}
+
+/*Intro Section */
+
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            'img title'
+            'img subtitle';
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+.my-services {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    /*background-image: url(https://www.rubrik.com/wp-content/uploads/2017/02/Distributed-Network-780x400-c-default.jpg);*/
+    /*background-image: url(https://ak0.picdn.net/shutterstock/videos/1012305950/thumb/1.jpg);*/
+    /*background-image: url(https://cdn4.vectorstock.com/i/1000x1000/22/63/cyberspace-stream-of-blue-binary-code-futuristic-vector-18662263.jpg);*/
+    background-image: url(https://image.freepik.com/free-vector/blue-binary-code-cyber-future-technology_42077-426.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    /* text-align: center; */
+}
+
+.section__title--services {
+    color: white;
+    position: relative;
+}
+
+.section__title--services::after {
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
 }

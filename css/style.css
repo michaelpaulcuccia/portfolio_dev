@@ -79,6 +79,7 @@ strong {
     letter-spacing: 2px;
     font-weight: var(--fw-bold);
     transition: transform 200ms ease-in-out;
+    margin-top: 10px;
 }
 
 .btn:hover {
@@ -263,5 +264,36 @@ nav {display: none;}
 
 .additional-services > h4 {
     margin: 2px;
+}
+
+/*My Work / Portfolio */
+
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio__item {
+    overflow: hidden;
+}
+
+.portfolio__img {
+    transition: 
+        transform 750ms cubic-bezier(.5, 0, .5, 1), 
+        opacity 250ms linear;
+        background: white;
+}
+
+.portfolio__img:hover {
+    transform: scale(1.2);
+    opacity: .75;
 }
 

@@ -59,6 +59,32 @@ strong {
     font-weight: var(--fw-bold);
 }
 
+/* :focus {
+    outline: 3px solid;
+    color: white;
+    outline-offset: 3px;
+} */
+
+/*Button*/
+
+.btn {
+    display: inline-block;
+    padding: .5em 1.5em;
+    background: blue;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
 /*Typography */
 
 h1, 
@@ -179,3 +205,63 @@ nav {display: none;}
     margin: 0.5em auto 1em;
     background: var(--clr-light);
 }
+
+@media (min-width: 800px) {
+    .services,
+    .additional-services {
+        /* display: flex; */
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* .service + .service {
+        margin-left: 2em;
+    } */
+}
+
+/*Who I am */
+
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__subtitle--about {
+        grid-column: title;
+    }
+
+    .about-me__img {
+        grid-area: img;
+    }
+}
+
+.section__subtitle--about {
+    background-image: url(https://image.freepik.com/free-vector/blue-cyber-binary-code-future-technology_42077-302.jpg);
+    background-blend-mode: lighten;
+    color: white;
+}
+
+.additional-services {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.additional-services > h4 {
+    margin: 2px;
+}
+
